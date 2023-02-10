@@ -21,7 +21,6 @@ const DiscoveryPage = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log(cars);
 
   const handleDelete = (id) => {
     const token = localStorage.getItem("token");
@@ -39,35 +38,60 @@ const DiscoveryPage = () => {
     });
   };
   return (
-    <>
+    <div className="container-fluid">
       <Navigation />
-      <h1>Discovery</h1>
-      <Link to="/newCar">
-        <button className="btn btn-primary my-5 mx-5">Add New Car</button>
-      </Link>
-      <div className="row" style={{ width: "95%", margin: "0 auto" }}>
+      <div className="d-flex justify-content-center">
+        <div>
+          <Link to="/newCar">
+            <button className="btn btn-primary my-5 px-5 py-2">
+              Add NewCar
+            </button>
+          </Link>
+        </div>
+      </div>
+      <div className="row gap-5">
         {cars.map((value) => (
           <>
-            <div key={value.id} className="col-md-3">
-              <img src={value.image} alt=" " style={{ width: "30%" }} />
+            <div
+              key={value.id}
+              className="col-md-3 border border-2 rounded-2 container"
+            >
+              <div
+                style={{ width: "100%", height: "180px", overflow: "hidden" }}
+              >
+                <img
+                  src={value.image}
+                  alt=" "
+                  style={{
+                    width: "100%",
+                    marginTop: "20px",
+                  }}
+                />
+              </div>
               <p>{value.name}</p>
-              <button
-                onClick={() => handleDelete(value.id)}
-                className="btn btn-danger"
-              >
-                delete
-              </button>
-              <button
-                onClick={() => handleEdit(value.id)}
-                className="btn btn-primary"
-              >
-                Edit
-              </button>
+              <p>{value.price}</p>
+              <p>{value.category}</p>
+              <div className="pb-2">
+                <button
+                  onClick={() => handleDelete(value.id)}
+                  className="btn btn-danger"
+                  style={{ width: "50%" }}
+                >
+                  delete
+                </button>
+                <button
+                  onClick={() => handleEdit(value.id)}
+                  className="btn btn-primary"
+                  style={{ width: "50%" }}
+                >
+                  Edit
+                </button>
+              </div>
             </div>
           </>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 export default DiscoveryPage;

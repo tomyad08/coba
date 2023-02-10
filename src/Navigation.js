@@ -3,25 +3,31 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <div className="row" style={{ backgroundColor: "purple", color: "white" }}>
-      <div className="col">
+    <div
+      className="d-flex justify-content-around"
+      style={{ backgroundColor: "purple", color: "white" }}
+    >
+      <div className="py-4">
         <Link to="/">
-          <h4 style={{ textDecoration: "none", color: "white" }}>Home</h4>
+          <h4
+            style={{ textDecoration: "none", color: "white", fontSize: "30px" }}
+          >
+            Home
+          </h4>
         </Link>
       </div>
-      <div className="col">
+      <div>
         <Link to="/discovery">
-          <h4 style={{ textDecoration: "none", color: "white" }}>Discovery</h4>
-        </Link>
-      </div>
-      <div className="col">
-        <Link to="/login">
-          <h4 style={{ textDecoration: "none", color: "white" }}>LogIn</h4>
-        </Link>
-      </div>
-      <div className="col">
-        <Link to="/register">
-          <h4 style={{ textDecoration: "none", color: "white" }}>Register</h4>
+          <h4
+            style={{
+              textDecoration: "none",
+              color: "white",
+              fontSize: "30px",
+              paddingTop: "22px",
+            }}
+          >
+            Discovery
+          </h4>
         </Link>
       </div>
     </div>

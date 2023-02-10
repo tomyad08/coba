@@ -23,22 +23,38 @@ const Register = () => {
       .post(API.REGISTER, payload)
       .then((res) => console.log(res))
       .catch((err) => console.log(err.message));
+
+    alert("Register Success");
   };
 
   return (
-    <>
-      <Navigation />
-      <h1>Register</h1>
-      <input type="email" onChange={handleEmail} placeholder="email" />
-      <input type="password" onChange={handlePassword} placeholder="password" />
-      <button onClick={handleRegis} className="btn btn-primary">
+    <div style={{ width: "350px" }}>
+      <h2 className="text-center">Register</h2>
+      <input
+        type="email"
+        onChange={handleEmail}
+        placeholder="email"
+        className="mb-2 border border-2 rounded-2"
+        style={{ width: "90%", height: "40px", fontSize: " 20px" }}
+      />
+      <br />
+      <input
+        type="password"
+        onChange={handlePassword}
+        placeholder="password"
+        style={{ width: "90%", height: "40px", fontSize: " 20px" }}
+        className="border border-2 rounded-2"
+      />
+      <br />
+      <button
+        onClick={handleRegis}
+        className="btn btn-primary my-3 px-auto "
+        style={{ width: "30%", fontSize: "20px", marginLeft: "110px" }}
+      >
         Register
       </button>
-      <p>
-        Silahkan isi data kamu seperti email dan password. Data yang kamu
-        submit, akan tersimpan di API.
-      </p>
-    </>
+      <p className="text-center">*Minimal password 6 karakter</p>
+    </div>
   );
 };
 export default Register;

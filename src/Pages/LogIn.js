@@ -44,8 +44,7 @@ const LogIn = () => {
     navigate("/");
   };
   return (
-    <>
-      <Navigation />
+    <div style={{ width: "350px" }}>
       {isLogin ? (
         <div>
           <button onClick={handleLogout} className="btn btn-danger mt-3 mx-2">
@@ -55,24 +54,35 @@ const LogIn = () => {
         </div>
       ) : (
         <>
-          <h1>Log In</h1>
-          <input type="email" onChange={handleEmail} placeholder="email" />
-          <input
-            type="password"
-            onChange={handlePassword}
-            placeholder="password"
-          />
-          <button onClick={handleRegis} className="btn btn-success mx-2">
-            {" "}
-            LogIn
-          </button>
-          <p>
-            Silahkan cantumkan email dan password kamu. Isi data kamu sesuai
-            data yang kamu daftarkan di halaman register.
-          </p>
+          <div>
+            <h2 className="text-center">Log In</h2>
+            <input
+              type="email"
+              onChange={handleEmail}
+              placeholder="email"
+              className="mb-2 mx-2 border border-2 rounded"
+              style={{ width: "90%", height: "40px", fontSize: " 20px" }}
+            />
+            <br />
+            <input
+              type="password"
+              onChange={handlePassword}
+              placeholder="password"
+              className="mx-2 border border-2 rounded"
+              style={{ width: "90%", height: "40px", fontSize: " 20px" }}
+            />
+            <br />
+            <button
+              onClick={handleRegis}
+              className="btn btn-success my-3 px-auto"
+              style={{ width: "30%", fontSize: "20px", marginLeft: "110px" }}
+            >
+              LogIn
+            </button>
+          </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 export default LogIn;
