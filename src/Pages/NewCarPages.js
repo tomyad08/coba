@@ -56,6 +56,7 @@ const NewCar = () => {
           style={{ width: "30%", backgroundColor: "white" }}
         >
           <form onSubmit={handleSubmit}>
+            <h1 className="text-center">Add Cars</h1>
             <input
               type="text"
               name="namaMobil"
