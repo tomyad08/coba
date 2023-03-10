@@ -1,4 +1,4 @@
-export const API = {
+export const REACT_APP_API = {
   REGISTER: "https://bootcamp-rent-cars.herokuapp.com/admin/auth/register ",
   LOGIN: "https://bootcamp-rent-cars.herokuapp.com/admin/auth/login",
   GET_CARS:

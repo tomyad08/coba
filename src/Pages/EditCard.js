@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const EditCard = () => {
   const location = useLocation();
-  console.log(location.state);
+
   const [inputs, setInputs] = useState(" ");
   const [datas, setDatas] = useState(" ");
 

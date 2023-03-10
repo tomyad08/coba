@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { API } from "../const/endpoint";
+import { REACT_APP_API } from "../const/endpoint";
 import Navigation from "../Navigation";
 
 const DiscoveryPage = () => {
@@ -15,7 +15,7 @@ const DiscoveryPage = () => {
       },
     };
     axios
-      .get(API.GET_CARS, config)
+      .get(REACT_APP_API.GET_CARS, config)
       .then((res) => {
         setCars(res.data.cars);
       })
@@ -29,7 +29,7 @@ const DiscoveryPage = () => {
         access_token: token,
       },
     };
-    axios.delete(API.POST_CARS + `/${id}`, config);
+    axios.delete(REACT_APP_API.POST_CARS + `/${id}`, config);
   };
 
   const handleEdit = (id) => {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { API } from "../const/endpoint";
+import { REACT_APP_API } from "../const/endpoint";
 
 const NewCar = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const NewCar = () => {
     formData.append("status", false);
 
     axios
-      .post(API.POST_CARS, formData, config)
+      .post(REACT_APP_API.POST_CARS, formData, config)
       .then((res) => {
         console.log(res);
         navigate("/discovery");

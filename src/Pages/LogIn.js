@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { API } from "../const/endpoint";
+import { REACT_APP_API } from "../const/endpoint";
 import Navigation from "../Navigation";
 
 const LogIn = () => {
@@ -22,7 +22,7 @@ const LogIn = () => {
       password: password,
     };
     axios
-      .post(API.LOGIN, payload)
+      .post(REACT_APP_API.LOGIN, payload)
       .then((res) => {
         localStorage.setItem("token", res.data.access_token);
         navigate("/discovery");

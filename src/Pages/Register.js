@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { API } from "../const/endpoint";
+import { REACT_APP_API } from "../const/endpoint";
 import Navigation from "../Navigation";
 
 const Register = () => {
@@ -20,7 +20,7 @@ const Register = () => {
       role: "Admin",
     };
     axios
-      .post(API.REGISTER, payload)
+      .post(REACT_APP_API.REGISTER, payload)
       .then((res) => console.log(res))
       .catch((err) => console.log(err.message));
 
