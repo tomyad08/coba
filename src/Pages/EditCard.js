@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const EditCard = () => {
   const location = useLocation();
-
   const [inputs, setInputs] = useState(" ");
   const [datas, setDatas] = useState(" ");
 
@@ -24,10 +23,9 @@ const EditCard = () => {
       )
       .then((res) => {
         setDatas(res.data);
-        console.log(datas);
       });
   }, []);
-  console.log(datas);
+
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -51,7 +49,6 @@ const EditCard = () => {
     formData.append("price", inputs.price);
     formData.append("status", false);
 
-    console.log(inputs);
     axios
       .put(
         `https://bootcamp-rent-cars.herokuapp.com/admin/car/${datas.id}`,

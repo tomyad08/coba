@@ -15,7 +15,10 @@ const DiscoveryPage = () => {
       },
     };
     axios
-      .get(REACT_APP_API.GET_CARS, config)
+      .get(
+        "https://bootcamp-rent-cars.herokuapp.com/admin/v2/car?page=1&pageSize=10",
+        config
+      )
       .then((res) => {
         setCars(res.data.cars);
       })
@@ -29,7 +32,10 @@ const DiscoveryPage = () => {
         access_token: token,
       },
     };
-    axios.delete(REACT_APP_API.POST_CARS + `/${id}`, config);
+    axios.delete(
+      "https://bootcamp-rent-cars.herokuapp.com/admin/car" + `/${id}`,
+      config
+    );
   };
 
   const handleEdit = (id) => {

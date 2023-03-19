@@ -20,7 +20,10 @@ const Register = () => {
       role: "Admin",
     };
     axios
-      .post(REACT_APP_API.REGISTER, payload)
+      .post(
+        "https://bootcamp-rent-cars.herokuapp.com/admin/auth/register ",
+        payload
+      )
       .then((res) => console.log(res))
       .catch((err) => console.log(err.message));
 

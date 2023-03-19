@@ -22,7 +22,10 @@ const LogIn = () => {
       password: password,
     };
     axios
-      .post(REACT_APP_API.LOGIN, payload)
+      .post(
+        "https://bootcamp-rent-cars.herokuapp.com/admin/auth/login",
+        payload
+      )
       .then((res) => {
         localStorage.setItem("token", res.data.access_token);
         navigate("/discovery");

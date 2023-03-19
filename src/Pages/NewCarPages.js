@@ -31,7 +31,11 @@ const NewCar = () => {
     formData.append("status", false);
 
     axios
-      .post(REACT_APP_API.POST_CARS, formData, config)
+      .post(
+        "https://bootcamp-rent-cars.herokuapp.com/admin/car",
+        formData,
+        config
+      )
       .then((res) => {
         console.log(res);
         navigate("/discovery");
